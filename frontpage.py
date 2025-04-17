@@ -1,0 +1,20 @@
+from tkinter import *
+import subprocess
+root=Tk()
+root.title("frontpage")
+root.geometry('%dx%d+0+0'%(root.winfo_screenwidth(),root.winfo_screenheight()))
+def homepage(event):
+    subprocess.run(["python","homepage.py"])
+root.state("zoomed")
+bus=PhotoImage(file="star.png")
+root.configure(bg='peachpuff')
+Label(root,image=bus).grid(row=1,column=4,padx=490)
+Label(root,text=' Online Bus Booking System',font = 'Times 28 bold',bg='coral',fg='gray22').grid(row=2,column=4,padx=490,pady=3)
+Label(root,text=' Name : Zeeshan Ahmad Siddiqui',font = 'Times 28 bold',bg='thistle1',fg='gray22').grid(row=3,column=4,padx=490,pady=3)
+Label(root,text=' Er: 221B463',font = 'Times 28 bold',bg='thistle2',fg='gray22').grid(row=4,column=4,padx=490,pady=3)
+Label(root,text=' mobile : 9302357085',font = 'Times 28 bold',bg='ivory2',fg='gray22').grid(row=5,column=4,padx=490,pady=3)
+Label(root,text=' Submitted to: Dr.Mahesh Kumar',font = 'Times 28 bold',bg='antique white',fg='gray22').grid(row=6,column=4,padx=490,pady=20)
+Label(root,text=' Project Based Learnig',font = 'Times 28 bold',bg='plum1',fg='gray22').grid(row=7,column=4,padx=490,pady=5)
+Label(root,text=' Press Any Key To Proceed',font = 'Times 10 bold',bg='pink',fg='gray22').grid(row=8,column=4,padx=490,pady=15)
+root.bind("<Key>",homepage)
+root.mainloop()
